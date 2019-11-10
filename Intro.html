@@ -8,62 +8,13 @@
     <title>Revocycle</title>
 
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="IntroStyle.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
       <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
   </head>
   <body>
-
-      <style>
-          .center1 {
-            margin: auto;
-            width: 50%;
-            padding: 30px;
-          }
-          .center2 {
-            margin: auto;
-            width: 25%;
-          }
-          .center3 {
-            margin: auto;
-            width: 20%;
-            padding: 30px;
-          }
-          body {
-              background-image: url("background.png");
-              background-repeat: no-repeat;
-              background-size: cover;
-              background-attachment: scroll;
-          }
-
-          img{
-              width: 120%;
-              height: 170px;
-              align-content: center;
-          }
-          .button {
-              background-color: #FBFFAA;
-              border-radius: 50%;
-              padding: 14px 25px;
-              border: 2px solid #4CAF50;
-              -webkit-transition-duration: 0.4s;
-              transition-duration: 0.4s;
-              cursor: pointer;
-          }
-          .button:hover {
-              background-color: #4CAF50; /* Green */
-              color: white;
-          }
-          .column {
-              float: left;
-              margin-left: 10;
-              width: 45%;
-              padding: 15px;
-              border: 2px solid #4CAF50;
-          }
-
-      </style>
 
       <div class="center2"; align="center">
           <h1> Welcome to </h1>
@@ -73,7 +24,7 @@
       <div class="column"; align="center">
           <br>
           <button>
-              <a href="#" data-toggle="popover" title="About Us" data-content="Hi, welcome to RevoCycle. 
+              <a href="#" data-toggle="popover" title="About Us" data-placement="bottom" data-content="Hi, welcome to RevoCycle. 
                                                                                We are a group looking to help you recycle and compost, 
                                                                                and help the world be a cleaner place!
                                                                                A lot of times, materials are recycled improperly,
@@ -81,9 +32,18 @@
                                                                                Therefore, thank you for using us. We hope that our information will help you and the Earth!">About Us</a>
           </button>
       </div>
+      
+      <div class="column2"; align="center">
+          <br>
+          <h2>
+              <u>Tips</u>
+              <br><br><br>
+              <p id="tips"></p>
+          </h2>
+      </div>
 
       <div class="center3"; align="center">
-          <p> If you would like to find a bin <br> click the button below</p>
+          <p> Find a bin</p>
           <button class="button">
               <a href="Revocycle.html" target="_self">
                   <i class="fas fa-globe-americas" style="font-size:60px;color:#445e96;"></i>
@@ -92,7 +52,7 @@
       </div>
 
       <div class="center3"; align="center">
-          <p> If you would like to learn <br> how to recycle your item <br> click the button below</p>
+          <p> Learn how and what to recycle</p>
           <button class="button">
               <a href="Recycling-Options.html" target="_self">
                   <i class="fas fa-recycle" style="font-size:65px;color:#445e96;"></i>
@@ -104,7 +64,22 @@
           $(document).ready(function(){
           $('[data-toggle="popover"]').popover();
           });
-</script>
+          
+          var t = [
+                    "Use reusable containers and silverware when bringing food to school or work!",
+                    "Remember to dump any food or liquids out of containers before recycling them!",
+                    "Don’t feed ducks bread -- it makes them sick. Some great alternatives are frozen peas/corn, grapes, oats, and rice !",
+                    "Plant a tree!"
+                  ]
+          var myVar = setInterval(tips, 1000);
+          var i=0;
+          
+          function tips() {
+              var d = t[i];
+              document.getElementById("tips").innerHTML = d;
+              i=(i+1)%4;
+          }
+      </script>
 
   </body>
 </html>

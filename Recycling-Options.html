@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Recycle Options</title>
+      
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     
   </head>
   <body>
@@ -17,10 +19,80 @@
               background-size: cover;
               background-attachment: scroll;
           }
+          img {
+              width: 15%;
+          }
+          .form {
+              margin: auto;
+              width: 45%;
+              height: 500px;
+              padding: 15px;
+              border: 2px solid #4CAF50;
+          }
+          .button {
+              position: absolute;
+              top: 50px;
+              background-color: #FBFFAA;
+              border-radius: 50%;
+              padding: 15px 15px;
+              -webkit-transition-duration: 0.4s;
+              transition-duration: 0.4s;
+              cursor: pointer;
+          }
+          .button:hover {
+              background-color: #4CAF50; /* Green */
+              color: white;
+          }
+          
+          
       </style>
 
-   <h1> RevoCycle </h1>
-      <p1> Something goes here </p1>
+      <div>
+          <img src="Logo.png" alt="RevoCycle"> &nbsp;&nbsp;
+          <button class="button">
+              <a href="Intro.html" target="_self">
+                  <i class="fas fa-angle-double-left" style="font-size:30px;color:#445e96;"></i>
+              </a>
+          </button>
+      </div>
+      
+      <div align="center">
+          <h1> What would you like to recycle?</h1>
+      </div>
+      
+      <div class="form"; align="center">
+          
+          <form>
+              <input type="radio"; value="plastic"; name="Material"; onclick="displayDrop()";> Plastic<br>
+              <input type="radio"; value="paper"; name="Material"; onclick="displayDrop()"> Paper<br>
+              <input type="radio"; value="compost"; name="Material"; onclick="displayDrop()"> Compost<br><br>
+          </form>
+          
+          <div align="center"; style="visibility: hidden">
+              <form id="hide" action="/action_page.php" onchange="displayInfo()">
+                <select name="Recyclable">
+                <option value="none">none</option>
+                <option value="Bottle"; >Bottle</option>
+                <option value="Can">Can</option>
+                <option value="Plate">Plate</option>
+                </select>
+              <br><br>
+          </form>
+          </div>
+          
+          <div id="thing">
+              <p id="info"></p>
+          </div>
+      </div>
+      
+      <script>
+          function displayDrop(){
+              document.getElementById("hide").style.visibility = "visible";
+          }
+          function displayInfo() {
+              document.getElementById("info").innerHTML = "some info goes here";
+          }
+      </script>
       
   </body>
 </html>

@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Revocycle</title>
+      
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     
   </head>
   <body>
@@ -22,24 +24,40 @@
               height: 480px;
               border: 5px solid green;
           }
+          img {
+              width: 15%;
+          }
+          .button {
+              position: absolute;
+              top: 50px;
+              background-color: #FBFFAA;
+              border-radius: 50%;
+              padding: 15px 15px;
+              -webkit-transition-duration: 0.4s;
+              transition-duration: 0.4s;
+              cursor: pointer;
+          }
+          .button:hover {
+              background-color: #4CAF50; /* Green */
+              color: white;
+          }
       </style>
 
-   <h1> RevoCycle </h1>
-      <p1> Something goes here </p1>
-      
+      <div>
+          <img src="Logo.png" alt="RevoCycle"> &nbsp;&nbsp;
+          <button class="button">
+              <a href="Intro.html" target="_self">
+                  <i class="fas fa-angle-double-left" style="font-size:30px;color:#445e96;"></i>
+              </a>
+          </button>
+      </div>
       
       <hr>
-      
-      <button> Test </button>
-      <br>
-      <br>
-      <iframe src="https://www.google.com/maps/d/embed?mid=1EI4oIT_IyR87D49Qce0WtncvVWAiiEOW"></iframe>
-      
-      <!-- <a href="https://www.w3schools.com">This is a link</a> -->
-      <!-- <img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142"> -->
-      <!-- <button>Click me</button>
-            HTML lists are defined with the <ul> (unordered/bullet list) or the <ol> (ordered/numbered list) tag, followed by <li> tags (list items): 
-            <br> is an empty element without a closing tag (the <br> tag defines a line break): -->
+      <div>
+          <br>
+          <br>
+          <iframe src="https://www.google.com/maps/d/embed?mid=1EI4oIT_IyR87D49Qce0WtncvVWAiiEOW"></iframe>
+      </div>
       
   </body>
 </html>
