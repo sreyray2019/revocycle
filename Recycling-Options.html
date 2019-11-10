@@ -31,7 +31,7 @@
           }
           .button {
               position: absolute;
-              top: 50px;
+              top: 50px;*
               background-color: #FBFFAA;
               border-radius: 50%;
               padding: 15px 15px;
@@ -60,11 +60,12 @@
           <h1> What would you like to recycle?</h1>
       </div>
       
-      <div class="form"; align="center">
+      <div class="form"; align="center" style="background: #56F0DE">
           
           <form>
               <input type="radio"; value="plastic"; name="Material"; onclick="displayDrop()";> Plastic<br>
               <input type="radio"; value="paper"; name="Material"; onclick="displayDrop()"> Paper<br>
+              <input type="radio"; value="metal"; name="Material"; onclick="displayDrop()"> Metal<br>
               <input type="radio"; value="compost"; name="Material"; onclick="displayDrop()"> Compost<br><br>
           </form>
           
@@ -90,7 +91,24 @@
               document.getElementById("hide").style.visibility = "visible";
           }
           function displayInfo() {
-              document.getElementById("info").innerHTML = "some info goes here";
+              var info = [
+                            "Plastic: Check for a small triangle with a number in the center somewhere on the item.  If the number is 1, 2, 3, 4, 5, 6, or 7, it can go in the recyclig bin!  Make sure that the there is no food or liquid left in the item.  Thin plastic and film unfortunately cannot be recycled in general bins.",
+                            "Paper: All paper and cardboard accepted in recycling bins unless contaminated.  If contaminated by food, put in compost bin.",
+                            "Metal: All cans and foil can go in the recycling bin unless contaminated.  Most heavier metals also accepted.  Electronics unfortunately cannot be recycled in general bins.",
+                            "All food waste, wood, while uncoated paper plates, cotton swabs and balls, wine corks, pet food, hair, house plants and flowers, and paper contaminated by food is accepted in compost bins.  Any tableware that has the BPI certification logo is also accepted."
+                         ];
+              var i="";
+              var x = document.getElementsByName("Material");
+              if(x[0].checked){
+                  i=info[0]
+              } else if(x[1].checked){
+                  i=info[1]
+              } else if(x[2].checked){
+                  i=info[2]
+              } else{
+                  i=info[3]
+              }
+              document.getElementById("info").innerHTML = i;
           }
       </script>
       
